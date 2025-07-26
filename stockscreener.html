@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Investment Strategy Builder</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<header>
+    <div class="logo">
+        <img src="assets/soullogo.png" alt="Logo">
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="investments.html">Investments</a></li>
+            <li><a href="budgeting.html">Budgeting</a></li>
+            <li><a href="stockscreener.html">Smart Investor</a></li>
+            </li>
+        </ul>
+    </nav>
+</header>
+
+<body>
+    <div class="container">
+        <h1>Smart Investment Strategy Builder</h1>
+        
+        <!-- Risk Assessment Quiz -->
+        <section id="quiz">
+            <h2>Risk Assessment Quiz</h2>
+            <form id="riskForm">
+                <label>How long do you plan to invest?</label>
+                <select id="timeHorizon">
+                    <option value="short">Less than 3 years</option>
+                    <option value="medium">3-7 years</option>
+                    <option value="long">More than 7 years</option>
+                </select>
+
+                <label>How do you handle stock market drops?</label>
+                <select id="riskTolerance">
+                    <option value="low">I sell quickly to avoid losses</option>
+                    <option value="medium">I hold through downturns</option>
+                    <option value="high">I buy more during downturns</option>
+                </select>
+
+                <button type="button" onclick="calculateRisk()">Get Investment Strategy</button>
+            </form>
+        </section>
+
+        <!-- Suggested Portfolio -->
+        <section id="portfolio">
+            <h2>Suggested Portfolio</h2>
+            <div id="portfolioResult"></div>
+        </section>
+
+        <!-- Stock Price Lookup -->
+        <section id="stockLookup">
+            <h2>Check Stock Prices</h2>
+            <input type="text" id="stockSymbol" placeholder="Enter stock symbol (e.g., TSLA)">
+            <button onclick="fetchStockPrice()">Check Price</button>
+            <p>Stock Price: <span id="stockPrice">N/A</span></p>
+        </section>
+
+        <!-- Portfolio Performance Chart -->
+        <section id="chart">
+            <h2>Portfolio Performance</h2>
+            <canvas id="portfolioChart"></canvas>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

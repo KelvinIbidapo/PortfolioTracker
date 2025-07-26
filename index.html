@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio Tracker - Home</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> 
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/soullogo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="investments.html">Investments</a></li>
+                <li><a href="budgeting.html">Budgeting</a></li>
+                <li><a href="stockscreener.html">Smart Investor</a></li>
+
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="sidebar">
+            <h3>Profit Loss Calculator</h3>
+            <div class="calculator-box">
+                <label for="investment">Investment Amount ($):</label>
+                <input type="number" id="investment" placeholder="Enter total amount">
+        
+                <label for="shares">Number of Shares:</label>
+                <input type="number" id="shares" placeholder="Enter quantity">
+        
+                <label for="buy-price">Buy Price ($):</label>
+                <input type="number" id="buy-price" placeholder="Enter price per unit">
+        
+                <label for="sell-price">Sell Price ($):</label>
+                <input type="number" id="sell-price" placeholder="Enter price per unit">
+        
+                <button onclick="calculateProfitLoss()">Calculate</button>
+        
+                <h4>Total Profit: <span id="profit-result">0</span></h4>
+                <h4>Total Loss: <span id="loss-result">0</span></h4>
+                <h4>Profit/Loss %: <span id="percent-result">0%</span></h4>
+            </div>
+        </div>
+
+        <!-- 📌 Replacing the Candlestick Image with a Dynamic Chart -->
+        <div class="stock-chart-container">
+            <input type="text" id="stockSymbol" placeholder="Enter Symbol (e.g., TSLA)" value="TSLA">
+            <button onclick="displayStockChart(document.getElementById('stockSymbol').value)">Get Chart</button>
+            <canvas id="stockChart" width="600" height="400"></canvas>
+        </div>
+        
+            
+        
+            
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

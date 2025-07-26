@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment Tracker</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="assets/soullogo.png" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="investments.html">Investments</a></li>
+                <li><a href="budgeting.html">Budgeting</a></li>
+                <li><a href="stockscreener.html">Smart Investor</a></li>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="portfolio-summary">
+            <h3>Portfolio Summary</h3>
+            <p><strong>Total Investment Value:</strong> <span id="totalInvestment">$0.00</span></p>
+            <p><strong>Total Profit/Loss:</strong> <span id="totalProfitLoss">$0.00</span></p>
+        </div>
+        
+        <h2>Investment Portfolio Tracker</h2>
+        
+        <div class="investment-form">
+            <label for="assetType">Select Asset Type:</label>
+            <select id="assetType">
+                <option value="stock">Stock</option>
+                <option value="crypto">Crypto</option>
+                <option value="option">Option</option>
+            </select>
+            <input type="text" id="symbol" placeholder="Enter Symbol (AAPL, BTC, TSLA)">
+            <input type="number" id="quantity" placeholder="Quantity">
+            <input type="number" id="buyPrice" placeholder="Buy Price ($)">
+            <button onclick="addInvestment()">Add Investment</button>
+        </div>
+        
+        <h3>Portfolio Overview</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Type</th>
+                    <th>Symbol</th>
+                    <th>Quantity</th>
+                    <th>Buy Price</th>
+                    <th>Current Price</th>
+                    <th>Profit/Loss</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody id="portfolioTable"></tbody>
+        </table>
+        
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
